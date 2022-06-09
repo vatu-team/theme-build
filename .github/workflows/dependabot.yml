@@ -1,0 +1,61 @@
+# Vatu: Dependabot: Auto Merge
+# Version: 1.2.0
+
+name: "Dependabot"
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - edited
+  workflow_dispatch:
+
+permissions:
+  pull-requests: write
+  contents: write
+
+concurrency:
+  group: ${{ github.workflow }}--${{ github.head_ref }}
+  cancel-in-progress: true
+
+jobs:
+
+  # Dependabot Auto Merge.
+  #
+  # Performs the following steps:
+  # - Logs debug information.
+  # - Auto Merges Pull Request.
+  # - Post Slack notification message.
+  dependabot:
+
+    runs-on: self-hosted
+
+    # Only run if the creator is Dependabot.
+    if: ${{ github.actor == 'dependabot[bot]' }}
+
+    steps:
+
+      - name: "Logs debug information."
+        run: |
+          echo '${{ toJSON(github) }}'
+
+      - name: "Auto Merges Pull Request."
+        uses: actions/github-script@v4
+        with:
+          script: |
+            github.pulls.merge({
+              owner: context.payload.repository.owner.login,
+              repo: context.payload.repository.name,
+              pull_number: context.payload.number,
+              merge_method: 'rebase'
+            })
+
+      - name: "Post Slack notification message."
+        id: slack
+        uses: slackapi/slack-github-action@v1.19
+        with:
+          channel-id: 'updates'
+          payload: '{"blocks":[{"type":"header","text":{"type": "plain_text","text":"${{ github.head_ref }} upgraded for ${{ github.event.repository.name }}","emoji": true}},{"type":"section","text":{"type":"mrkdwn","text":"<${{ github.event.pull_request._links.html.href }}|View request>"}}]}'
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_DEPENDABOT_TOKEN }}

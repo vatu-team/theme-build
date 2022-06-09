@@ -1,0 +1,11 @@
+# System
+
+error_log
+.DS_Store
+
+# Development
+.devcontainer/*
+.vscode/*
+
+## NodeJS
+/node_modules/*
