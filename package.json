@@ -14,8 +14,8 @@
   "contributors": [
     {
       "name": "Michael Bragg",
-      "email" : "mike@vatu.dev",
-      "url" : "https://michaelbragg.com/"
+      "email": "mike@vatu.dev",
+      "url": "https://michaelbragg.com/"
     }
   ],
   "bugs": {
@@ -28,6 +28,7 @@
     "changelog.md"
   ],
   "dependencies": {
+    "@vatu/stylelint-config": "git+https://github.com/vatu-team/stylelint-config.git#0.0.1",
     "autoprefixer": "10.4.7",
     "chokidar-cli": "3.0.0",
     "cssnano": "5.1.11",
