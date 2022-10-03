@@ -1,5 +1,4 @@
 version: 2
-
 updates:
 
   # NPM.
@@ -7,7 +6,7 @@ updates:
     directory: "/"
     schedule:
       interval: daily
-      time: "01:11"
+      time: "08:30"
       timezone: "Europe/London"
     open-pull-requests-limit: 10
     commit-message:
