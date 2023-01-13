@@ -14,3 +14,5 @@ updates:
     commit-message:
       prefix: "Upgraded"
       prefix-development: "Upgraded"
+    ignore:
+      - dependency-name: "svg-sprite"

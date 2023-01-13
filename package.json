@@ -36,6 +36,6 @@
     "postcss": "^8.4.21",
     "postcss-cli": "^10.1",
     "sass": "^1.57",
-    "svg-sprite": "^2.0"
+    "svg-sprite": "2.0.1"
   }
 }
