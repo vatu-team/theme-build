@@ -20,7 +20,7 @@ Before completing the standard installation process.
 
 ## Copyright
 
-Copyright (c) 2022 Vatu Ltd.
+Copyright (c) 2022-2023 Vatu Ltd.
 
 ## Contact
 
