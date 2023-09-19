@@ -22,7 +22,7 @@ jobs:
   # - Auto Merges Pull Request.
   dependabot-aut-merge:
 
-    runs-on: self-hosted
+    runs-on: 'ubuntu-latest'
 
     # Only run if the creator is Dependabot or previous workflow was successful.
     if: ${{github.actor == 'dependabot[bot]'}}
