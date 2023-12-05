@@ -33,7 +33,7 @@
     "cssnano": "^6.0",
     "npm-run-all": "^4.1",
     "postcss": "^8.4",
-    "postcss-cli": "^10.1",
+    "postcss-cli": "^11.0",
     "sass": "^1.57",
     "svg-sprite": "2.0.1"
   }
