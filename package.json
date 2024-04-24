@@ -30,7 +30,7 @@
     "@vatu/stylelint-config": "git+https://github.com/vatu-team/stylelint-config.git#0.0.1",
     "autoprefixer": "^10.4",
     "chokidar-cli": "^3.0",
-    "cssnano": "^6.0",
+    "cssnano": "^7.0",
     "npm-run-all": "^4.1",
     "postcss": "^8.4",
     "postcss-cli": "^11.0",
